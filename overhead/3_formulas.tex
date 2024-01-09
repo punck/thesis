@@ -1,0 +1,75 @@
+\thispagestyle{plain}
+
+\section*{Control group selection}
+
+\begin{tabular}{lp{10cm}}
+	$X_C$                  & set of potential candidates                                                                                                       \\
+	$X_T$                  & case group                                                                                                                        \\
+	$X_{UT}$               & control group                                                                                                                     \\
+	$f_i$                  & $i$-th descriptive feature                                                                                                              \\
+	$\textbf{X}_i$         & $i$-th individual                                                                                                                          \\
+        	$x_{if}$                       & the value of individual $\textbf{X}_i$ on variable $f$                                                       \\
+         	$x^{*}_{if}$                   & the normalised value of the individual $\textbf{X}_i$ with regard to the $f$-th covariate                    \\
+	$NN_1(\textbf{X}_i)$   & closest neighbour to individual $\textbf{X}_i \in X_T$                                                                            \\
+	$NN_2(\textbf{X}_i)$   & the second closest neighbour to individual $\textbf{X}_i \in X_T$                                                                 \\
+	$p_i$                  & the propensity score for the $i$-th individual                                                                                    \\
+	$z_i$                  & treatment variable of the $i$-th individual                                                                                                                \\ 
+	$p$                    & probability of being exposed                                                                                                      \\
+	$b_i$                  & regression coefficients that describe the relative effects of the covariates ($f_i$-s) on the status of treatment assignment      \\
+    	$w_i$                          & the weighting factor of the $i$-th covariate                                                                 \\
+	$dissim(A,B)$ & the calculated dissimilarity measure of sets A and B                                                                            \\
+	$sim(A, B)$   & the calculated similarity measure of sets A and B                                                                               \\
+	$NNI_{ij}^{k}$         & the Nearest Neighbour Index for $\bm{\mathrm{\textbf{X}_i}}$ and $\bm{\mathrm{\textbf{X}_j}}$ individuals in the $k$-th dimension \\
+	$GDI_{ij}^{k}$         & the Global Dissimilarity Index for $\bm{\mathrm{\textbf{X}_i}}$ and $\bm{\mathrm{\textbf{X}_j}}$ elements in the $k$-th dimension \\
+	$min_f$                & the minimum value measured in the $f$-th dimension taking into account all individuals from ${X_T \cup X_C}$                      \\
+	$max_f$                & the maximum value measured in the $f$-th dimension taking into account all individuals from ${X_T \cup X_C}$                      \\
+	
+\end{tabular}
+
+\begin{tabular}{lp{10cm}}
+	   
+	$M$                    & set of matched case-control pairs                                                                                                 \\
+	$F_k$                  & the number of possible values along the $k$-th dimension                                                                          \\
+	$r_{x_{if_k}}$         & the ordered rank of the ordinal attribute $x_{if_k}$                                                                              \\
+	$freq^{X_T}_{kv}$              & the absolute frequency of the $v$-th category in the $k$-th dimension in the case group                      \\
+	$freq^{X_{UT}}_{kv}$           & the absolute frequency of the $v$-th category in the $k$-th dimension in the control group                   \\
+	$V_k$                          & the set of possible categories along the $k$-th dimension                                                    \\ 
+	$d_{ij}^{(f)}$                 & the distance of individuals $\textbf{X}_i \in X_T$ and $\textbf{X}_j \in X_C$                                \\
+
+
+
+%	$d_{ij}^{(k)}$                 & the normalised dissimilarity value of $\textbf{X}_i$ and $\textbf{X}_j$ in the $f$-th dimension              \\
+	%$NN_1(\textbf{X}_i)$           & the closest neighbour to individual $\textbf{X}_i \in X_T$                                                   \\
+	%$NN_2(\textbf{X}_i)$           & the second closest neighbour to individual $\textbf{X}_i \in X_T$                                            \\
+	$E(\textbf{X}_i)$              & Vogel-Korda error function                                                                                   \\
+	$p(\textbf{X}_i,\textbf{X}_j)$ & the probability for selecting the candidate $\textbf{X}_j \in X_C$ for the individual $\textbf{X}_i \in X_T$ \\
+	$t$                            & the temperature of the simulated annealing process                                                           \\
+	$e$                            & the energy of the simulated annealing process                                                                \\
+	$M_{i1}$                       & the first element from the $i$-th pair from $M$                                                              \\
+	$M_{i2}$                       & the second element from the $i$-th pair from $M$                                                             \\
+	$NN_k(\mathbf{X_i},Y)$         & the $k$-closest neighbours of $\mathbf{X_i}$ from the set $Y$                                                \\
+	$NN_k (\mathbf{X}_i,X_C)$      & the $k$-size reduced environment for an individual $\mathbf{X}_i \in X_T$                                    \\
+	$ActualMatching^{(t)}$         & a transient set of matched pairs that the algorithm generates at temperature $t$                             \\
+	$ActualMatching_i^{(t)}$       & an element of $ActualMatching^{(t)}$                                                                         \\ 
+	$X_{C^*}^{k}$                  & the aggregated reduced set of candidates for the $k$-sized environment                                       \\
+	$Dem(\textbf{X}_j)$            & demand set of $\textbf{X}_j$                                                                                 \\
+	$di(\textbf{X}_j)$             & the demand index for $\textbf{X}_j \in X_{C^*}^{k}$                                                          \\
+	$asi(\textbf{X}_j)$            & the alternative selection index for $\textbf{X}_j$                                                           \\                                                                       \\    
+\end{tabular}
+
+\section*{Information extraction from echocardiography documents}
+
+\begin{tabular}{lp{10cm}}
+        $s_i$ & string of characters \\
+        
+	$lev_{s_1,s_2}$                  & the Levenshtein distance of strings $s_1$ and $s_2$        \\
+	$d_w(s_1,s_2)$                   & the Jaro-Winkler distances of strings $s_1$ and $s_2$      \\
+	$sim_w(s_1,s_2)$                 & the Winkler similarity of strings $s_1$ and $s_2$          \\
+	$sim_j(s_1,s_2)$                 & the Jaro similarity of strings $s_1$ and $s_2$             \\
+	$l$                              & the length of a maximum 4 characters long common prefix    \\
+	$p$                              & a constant scaling factor with a standard value of $0.1$   \\
+	$m$                              & the number of matching characters                          \\
+	$t$                              & half of the number of transpositions                       \\
+	$\textbf{S}_i$                   & high-dimensional vector representation of string $s_i$    \\
+	$sim(\textbf{S}_1,\textbf{S}_2)$ & the Cosine similarity of $\textbf{S}_1$ and $\textbf{S}_2$ \\    
+\end{tabular}

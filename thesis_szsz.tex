@@ -1,0 +1,146 @@
+\documentclass[12pt, a4paper, twoside]{report}
+
+\usepackage{verbatim}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[hungarian]{babel}
+\usepackage{inputenc}
+\usepackage{t1enc}
+\usepackage{times}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{footmisc}
+\usepackage{geometry}
+\usepackage{epsfig}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{siunitx}
+%\usepackage[algochapter]{algorithm2e}
+\usepackage[linesnumbered,ruled,vlined,algochapter]{algorithm2e}
+\usepackage{todonotes}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{subcaption}
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\usepackage{geometry}
+\usepackage[raggedright]{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[shortcuts]{extdash}
+
+\usepackage[skip=6pt]{caption}
+% \captionsetup[boxed]{skip=6pt}
+\renewcommand{\figurename}{Fig}
+
+\setcounter{secnumdepth}{4}
+
+% \newcommand{\myparagraph}[1]{\paragraph*{#1}\mbox{}\\}
+
+%--------------------------------------------üres oldalon ne legyen sorszám: ---------------------
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{empty}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{empty}\cleardoublepage}
+%--------------------------------------------------------------------------
+
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+\DeclareMathOperator*{\argmax}{argmax} % no space, limits underneath in displays
+
+\newcommand{\vect}[1]{{\mathbf #1}}% definition for vectors
+
+%\newtheorem{alg}{Algorithm}[section]
+
+\geometry{verbose, a4paper, tmargin=3cm, bmargin=3cm, lmargin=4cm, rmargin=3cm}
+
+
+\fontfamily{cmr}
+\fontseries{m}
+
+\linespread{1.3}
+
+\hyphenation{WNNEM}
+\hyphenation{WNNSA}
+
+\hyphenation{re-cor-ded}
+
+\hyphenation{köz-vet-len}
+
+\begin{document}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\input{config/overhead}
+
+\input{overhead/0_firstpage}
+\cleardoublepage
+
+\input{overhead/1_acknowledgement}
+\cleardoublepage
+
+\input{abstracts/eng}
+\cleardoublepage
+
+\input{abstracts/hun}
+\cleardoublepage
+
+\input{abstracts/ger}
+\cleardoublepage
+
+\input{config/lists}
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+\listofalgorithms
+\cleardoublepage
+
+\chapter*{Abbreviations}
+\label{chap:abbreviations}
+\input{overhead/2_abbreviations}
+\cleardoublepage
+
+\chapter*{Formulas}
+\label{chap:formulas}
+\input{overhead/3_formulas}
+\cleardoublepage
+
+\input{config/main_content}
+
+\chapter{Introduction}
+\label{chap:introduction}
+\input{chapters/1_introduction}
+\cleardoublepage
+
+\chapter{Control group selection}
+\label{chap:control_group_selection}
+\input{chapters/2_control_group_selection}
+\cleardoublepage
+
+\chapter{Information extraction from echocardiography documents}
+\label{chap:text_mining}
+\input{chapters/3_text_mining}
+\cleardoublepage
+
+\bibliography{assets/bibliography/all}
+\bibliographystyle{unsrt}
+\cleardoublepage
+\newpage\hbox{~}\thispagestyle{empty}\newpage
+\cleardoublepage
+
+
+\end{document}
